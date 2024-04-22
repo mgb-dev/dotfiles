@@ -1,0 +1,8 @@
+[user]
+	email = matiasgbarzaghi@gmail.com
+	name = Matias Barzaghi
+[alias]
+	lg = log --oneline --decorate --all --graph
+	s = status -s -b
+[http]
+	version = HTTP/1.1
