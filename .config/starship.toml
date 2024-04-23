@@ -1,0 +1,41 @@
+# ~/.config/starship.toml
+# Prompt Idea
+# $username > folder_name -depth=3 (custom icons for special folders)\
+# replicate oh-my-posh current theme (it's acctualy pretty good haha)
+
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$nodejs\
+$cmd_duration\
+$line_break\
+$character"""
+
+[shell]
+disabled = false
+powershell_indicator = '_'
+style = 'bold blue'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = '[$duration]($style)'
+
+[character]
+error_symbol = '[❯](bold red)'
+
+[os]
+disabled = false
+format = '[$symbol]($style)'
+style = "#E95420"
+
+[os.symbols]
+Ubuntu = " "
