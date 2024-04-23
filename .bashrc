@@ -120,4 +120,8 @@ fi
 # Personal Config #
 ###################
 
+#>PATH modifications
+export PATH="$PATH:/opt/nvim/"
+
+#> Prompt
 eval "$(starship init bash)"
