@@ -6,3 +6,5 @@
 	s = status -s -b
 [http]
 	version = HTTP/1.1
+[credential]
+	helper = cache --timeout=3600
