@@ -7,5 +7,5 @@
 \.git
 \.gitignore
 \.gitmodules
-
+README.md
 \.config/gh/
