@@ -114,3 +114,6 @@ export PATH="$PATH:/opt/nvim/"
 
 #> Prompt
 eval "$(starship init bash)"
+
+#> Zoxide
+eval "$(zoxide init bash)"
