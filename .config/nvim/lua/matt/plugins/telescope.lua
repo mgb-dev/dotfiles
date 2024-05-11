@@ -13,6 +13,7 @@ return {
       end,
     },
     "nvim-tree/nvim-web-devicons",
+    "folke/todo-comments.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -45,6 +46,7 @@ return {
     map('n', '<leader>fh', tel_buil.help_tags, { desc = '[F]ind [H]elp' })
     map('n', '<leader>fw', tel_buil.grep_string, { desc = '[F]ind current [W]ord' })
     map('n', '<leader>fd', tel_buil.diagnostics, { desc = '[F]ind [D]iagnostics' })
+    map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[F]ind [T]odos" })
 
   end,
 }
