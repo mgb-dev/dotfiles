@@ -40,6 +40,8 @@ return {
 				--formatters
 				"prettier",
 				"stylua",
+				--linters
+				"eslint_d",
 			},
 		})
 	end,
