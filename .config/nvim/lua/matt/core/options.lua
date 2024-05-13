@@ -34,7 +34,7 @@ opt.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 opt.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
+-- note: You should make sure your terminal supports this
 opt.termguicolors = true
 
 opt.background = "dark"
