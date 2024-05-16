@@ -57,4 +57,20 @@ return {
       },
     })
   end,
+		luasnip.config.set_config({
+			history = false,
+			updateevents = "TextChanged,TextChangedI",
+		})
+
+		map({ "i", "s" }, "<c-l>", function()
+			if luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			end
+		end, { silent = true })
+
+		map({ "i", "s" }, "<c-h>", function()
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			end
+		end)
 }
