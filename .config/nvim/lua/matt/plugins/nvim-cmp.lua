@@ -67,12 +67,12 @@ return {
 			if luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
 			end
-		end, { silent = true })
+		end, { desc = "Jump Next Node", silent = true })
 
 		map({ "i", "s" }, "<c-h>", function()
 			if luasnip.jumpable(-1) then
 				luasnip.jump(-1)
 			end
-		end)
+		end, { desc = "Jump Prev Node" })
 	end,
 }
