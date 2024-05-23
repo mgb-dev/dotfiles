@@ -112,6 +112,7 @@ fi
 #> Enviroment Variables
 export C=/mnt/c/
 export winusr=$C/Users/Usuario/
+export EDITOR=nvim
 
 #> PATH modifications
 export PATH="$PATH:/opt/nvim/"
