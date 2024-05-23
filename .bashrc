@@ -109,7 +109,11 @@ fi
 # Personal Config #
 ###################
 
-#>PATH modifications
+#> Enviroment Variables
+export C=/mnt/c/
+export winusr=$C/Users/Usuario/
+
+#> PATH modifications
 export PATH="$PATH:/opt/nvim/"
 
 #> Prompt
