@@ -1,10 +1,10 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = {"BufReadPre", "BufNewFile"},
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		{"antosha417/nvim-lsp-file-operations", config = true,},
-		{"folke/neodev.nvim", opts = {},},
+		{ "antosha417/nvim-lsp-file-operations", config = true },
+		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
@@ -16,7 +16,7 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspconfig", {}),
 			callback = function(ev)
-				local opts = { buffer = ev.buf, silent = true}
+				local opts = { buffer = ev.buf, silent = true }
 
 				-- keybinds
 				opts.desc = "[G]o to [R]eferences"
@@ -79,7 +79,7 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
-		
+
 		mason_lspconfig.setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({
@@ -94,16 +94,13 @@ return {
 							diagnostics = {
 								globals = { "vim" },
 							},
-							completion ={
+							completion = {
 								callSnippet = "Replace",
-							}
+							},
 						},
 					},
 				})
 			end,
-			
-
 		})
-
-	end
+	end,
 }
