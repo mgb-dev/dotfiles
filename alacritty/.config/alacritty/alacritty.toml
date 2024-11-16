@@ -1,0 +1,18 @@
+######################
+# Alacritty's Config #
+######################
+
+shell = "/bin/bash"
+live_config_reload = true
+
+[window]
+decorations = "None"
+startup_mode = "Maximized"
+
+[font]
+size = 12
+
+[keyboard]
+bindings = [
+  { key = "v", mods = "Control", mode = "AppCursor|~Vi", action = "Paste" },
+]
