@@ -32,4 +32,4 @@ fi
 ###################
 
 #> keychain ssh-agent launch
-eval $"keychain --agents ssh --eval $HOME/.ssh/id_rsa"
+# eval $"keychain --agents ssh --eval $HOME/.ssh/id_rsa"
