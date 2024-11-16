@@ -5,6 +5,10 @@ local map = vim.keymap.set
 
 -- [[ User Keymaps ]]
 
+-- [[ Spell Keymaps]]
+map("n", "<leader>sj", "]s", { desc = "[S]pell next" })
+map("n", "<leader>sk", "[s", { desc = "[S]pell previous" })
+map("n", "<leader>ss", "z=", { desc = "[S]pell [S]ugest" })
 
 map("n", "<M-f>", "<C-^>", { desc = "[Alt]ernate [F]ile" })
 map("n", "<leader>ee", vim.cmd.Ex, { desc = "[E]xplorer Open" })
