@@ -116,6 +116,8 @@ export EDITOR=nvim
 
 #> PATH modifications
 export PATH="$PATH:/opt/nvim/"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/usr/bin/fzf"
 
 #> Prompt
 eval "$(starship init bash)"
