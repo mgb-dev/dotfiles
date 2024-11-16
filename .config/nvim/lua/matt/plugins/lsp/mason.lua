@@ -40,6 +40,9 @@ return {
 				--formatters
 				"prettier",
 				"stylua",
+				"gofumpt",
+				"goimports-reviser",
+				"golines",
 				--linters
 				"eslint_d",
 			},
