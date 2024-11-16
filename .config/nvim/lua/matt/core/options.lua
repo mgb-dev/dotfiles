@@ -22,7 +22,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 opt.wrap = false
 
@@ -32,7 +32,7 @@ opt.timeout = true
 opt.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-opt.completeopt = 'menuone,noselect'
+opt.completeopt = "menuone,noselect"
 
 -- note: You should make sure your terminal supports this
 opt.termguicolors = true
@@ -72,11 +72,11 @@ opt.backspace = "indent,eol,start"
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
 })
