@@ -3,8 +3,8 @@
 -- Set <Space> as global leader key
 vim.g.mapleader = " "
 
--- Show netrw as a file-tree
--- vim.g.netrw_liststyle = 3
+-- Disable netrw banner
+vim.g.netrw_banner = 0
 
 local opt = vim.opt
 
