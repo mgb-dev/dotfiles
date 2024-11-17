@@ -2,8 +2,11 @@
 # Alacritty's Config #
 ######################
 
-shell = "/bin/bash"
+[general]
 live_config_reload = true
+
+[terminal]
+shell = "/bin/bash"
 
 [window]
 decorations = "None"
