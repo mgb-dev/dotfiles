@@ -1,30 +1,68 @@
-# Welcome to my Dotfiles repo
+# @mgb-dev's dotfiles repository
 
-Here is where all my terminal config lives
-I'm currently using Ubuntu 22.04 LTS
+Here is where all my terminal & CLI tooling configuration lives.
 
-## Usage
-I use `GNU stow` to manage my dotfiles
+## Description
 
-here is a script to use my repo:
+This repository is based on the usage and structure of `GNU stow`.
+every _package_ (folder) in this repo, contains the structure in which the symlink (for that particular config file) will be created.
+The reasons to choose `GNU stow` over any other "dotfiles management tool", are 3:
+
+### 1. Simplicity
+
+`GNU stow` is very simple to use, setup and iterate into.
+
+### 2. Ubiquity
+
+`GNU stow` exists as a default tool on a lot of UNIX based systems. Or its 4 cli words away: `sudo <pkg-manager> install stow`
+Which makes it the perfect tool to have at hand if we want portability for configuration files.
+
+### 3. Support
+
+`GNU stow`, as its name implies, is being developed, maintained and updated by the GNU organization. Which means:
+
+- Backwards compatibility
+- Long time support
+
+## Installation
+
+> ℹ️ NOTE: This repository requires `git` and `stow` to be installed and in you `$PATH`
+
+Navigate to the `$HOME` directory (_parent directory_ in stow terms)
 
 ```bash
-# navigate to the home directory, since the config files live there
 cd ~
-
-# OPTIONAL.
-# git and stow are generally pre-install in Debian distros
-sudo apt install git
-sudo apt install stow
-
-# Download the repo
-git clone <repo_url>
-
-# navigate into the directory
-cd dotfiles
-
-#Execute the stow program with "."(current directory) as a paramater and hit <Enter>
-stow .
 ```
 
-> :info: I choose the  `stow .` expression instead of the more common `stow *` because is more simple for me to "mirror" the home directory as is, instead of subfoldering everything (to be decided)
+Download the repo
+
+```bash
+git clone <repo_url>
+```
+
+Navigate into the repo's directory
+
+```bash
+cd dotfiles
+```
+
+Install all packages
+
+```bash
+stow *
+```
+
+## Uninstall
+
+You also have the option to remove every symlink created by stow.
+Just run the following command:
+
+```bash
+cd ~/dotfiles && stow -D
+```
+
+## Credits
+
+- [gnu stow](https://www.gnu.org/software/stow/)
+
+## License
