@@ -1,5 +1,9 @@
-# ~./dotfiles/.stow.local.ignore: Files to be ignored by gnu 'stow'
-#
+########################
+# GNU Stow ignore list #
+########################
+
+# ~/.dotfiles/.stow.local.ignore: Files to be ignored by 'gnu stow'
+# i.e: files you don't want to appear in the parent directory
 # Comments and blank lines are allowed.
 #
 # See 'info stow' section "4 Ignore Lists" for more information
