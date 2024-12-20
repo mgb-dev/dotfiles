@@ -128,3 +128,5 @@ eval "$(zoxide init bash)"
 #> Fast Node Manager (FNM)
 export PATH="/home/matt/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+. "$HOME/.cargo/env"
