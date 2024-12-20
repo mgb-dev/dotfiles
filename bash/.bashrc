@@ -130,3 +130,5 @@ export PATH="/home/matt/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
