@@ -22,7 +22,7 @@ return {
 			ensure_installed = {
 				"bashls",
 				"eslint",
-				"tsserver",
+				"ts_ls",
 				"html",
 				"cssls",
 				"tailwindcss",
