@@ -11,5 +11,6 @@ alias gs="git s"
 alias glg="git lg"
 alias bat=batcat
 alias clip="xclip -selection clip"
+alias glow=$HOME/Documents/glow/glow
 
 alias dot="cd ~/.dotfiles/"
