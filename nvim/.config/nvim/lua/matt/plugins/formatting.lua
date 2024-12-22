@@ -7,7 +7,7 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        go = { "gofumpt", "goimports-reviser", "golines", },
+        go = { "gofumpt", "goimports-reviser", "golines" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
