@@ -6,7 +6,10 @@ return {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       -- please "make" sure you have installed make and /or gcc
-      -- and run make inside the .local/share/nvim/lazy/telescope-fzf-native.nvim/
+      -- and run
+      -- cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim/
+      -- make
+      -- TODO: implement cmd runner inside lua config function
       make = "make",
       config = function()
         require("telescope").load_extension("fzf")
