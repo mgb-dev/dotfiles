@@ -1,0 +1,7 @@
+#-----------------------#
+# lua formatting styles #
+#-----------------------#
+
+syntax = "All"
+indent_type = "Spaces"
+indent_width = 2
