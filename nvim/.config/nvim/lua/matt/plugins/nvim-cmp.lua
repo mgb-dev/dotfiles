@@ -12,6 +12,10 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    {
+      "allaman/emoji.nvim",
+      ft = "markdown",
+    },
   },
 
   config = function()
@@ -47,6 +51,7 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "luasnip" }, -- snippets
+        { name = "emoji" }, -- emoji
         { name = "path" }, -- file system path
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -63,6 +68,11 @@ return {
       updateevents = "TextChanged,TextChangedI",
     })
 
+    -- Setup Emoji
+    require("emoji").setup({})
+    -- optional for telescope integration
+    local ts = require("telescope").load_extension("emoji")
+    vim.keymap.set("n", "<leader>fe", ts.emoji, { desc = "[F]ind [E]moji" })
 
     map({ "i", "s" }, "<c-l>", function()
       if luasnip.expand_or_jumpable() then
