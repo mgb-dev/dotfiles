@@ -34,6 +34,7 @@ return {
         "lua_ls",
         "taplo",
         "gopls",
+        "omnisharp",
       },
     })
 
@@ -47,6 +48,7 @@ return {
         "golines",
         --linters
         "eslint_d",
+        "csharpier",
       },
     })
 

@@ -119,6 +119,21 @@ return {
           },
         })
       end,
+      ["omnisharp"] = function()
+        -- local omnisharp_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp"
+        local omnisharp_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"
+        -- local pid = vim.fn.getpid()
+        lspconfig["omnisharp"].setup({
+          -- cmd = { omnisharp_path, "--languageserver", "--hostPID", tostring(pid) },
+          cmd = { "dotnet", omnisharp_path },
+          capabilities = capabilities,
+          enable_roslyn_analysers = true,
+          enable_import_completion = true,
+          organize_imports_on_format = true,
+          enable_decompilation_support = true,
+          filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
+        })
+      end,
     })
   end,
 }
