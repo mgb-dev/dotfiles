@@ -113,11 +113,13 @@ fi
 export C=/mnt/c/
 export winusr=$C/Users/Usuario/
 export EDITOR=nvim
+export DOTNET_ROOT=$HOME/.local/programs/dotnet-sdk-9.0.102/
 
 #> PATH modifications
 export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/usr/bin/fzf"
+export PATH="$PATH:$DOTNET_ROOT"
 
 #> Prompt
 eval "$(starship init bash)"
@@ -132,3 +134,18 @@ eval "`fnm env`"
 . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#> dotnet
+# bash parameter completion for the dotnet CLI
+
+function _dotnet_bash_complete()
+{
+  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n' # On Windows you may need to use use IFS=$'\r\n'
+  local candidates
+
+  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
+
+  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
+}
+
+complete -f -F _dotnet_bash_complete dotnet
