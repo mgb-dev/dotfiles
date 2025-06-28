@@ -131,8 +131,10 @@ eval "$(zoxide init bash)"
 export PATH="/home/matt/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
+#> Rust
 . "$HOME/.cargo/env"
 
+#> fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #> dotnet
