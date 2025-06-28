@@ -3,17 +3,28 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# MATT's bash aliases
+################
+# Matt defined #
+################
+
+#> Quality of Life
 alias cls=clear
 alias q=exit
-alias lg=lazygit
-alias gs="git s"
-alias glg="git lg"
-alias bat=batcat
 alias clip="xclip -selection clip"
+alias dot="cd ~/.dotfiles/"
+
+#> Programs
+alias lg=lazygit
+alias bat=batcat
 alias glow=$HOME/Documents/glow/glow
 alias dn=dotnet
 alias csc="dotnet /home/matt/.local/programs/dotnet-sdk-9.0.102/sdk/9.0.102/Roslyn/bincore/csc.dll"
+alias rkdv=/home/matt/foss/armbian-rk322x-tv-box-linux/rkdeveloptool/rkdeveloptool
+
+#> Scripts
 alias set-wallpaper="bash /home/matt/dev/bash/scripts/wallpaper-looper/set-wallpaper.sh"
 
-alias dot="cd ~/.dotfiles/"
+#> Git
+alias gs="git s"
+alias glg="git lg"
+
