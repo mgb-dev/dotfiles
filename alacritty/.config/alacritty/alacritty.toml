@@ -9,7 +9,7 @@ live_config_reload = true
 shell = "/bin/bash"
 
 [window]
-opacity = 0.89
+opacity = 0.95
 decorations = "None"
 startup_mode = "Maximized"
 
