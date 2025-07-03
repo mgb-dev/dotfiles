@@ -9,7 +9,9 @@ alias clip="xclip -selection clip"
 alias dot="cd ~/.dotfiles/"
 
 #> Programs
+alias ls="eza --color=always --icons"
 alias bat=batcat
+alias cat=batcat
 alias lg=lazygit
 alias glow=$HOME/Documents/glow/glow
 alias dn=dotnet
