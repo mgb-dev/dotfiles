@@ -2,6 +2,10 @@
 # Matt defined #
 ################
 
+#> Data section
+LAZY_CONFIG=$HOME/.config/lazygit/config.yml
+LAZYGIT_THEME=$HOME/Documents/themes/lazygit/themes-mergable/mocha/lavender.yml
+
 #> Quality of Life
 alias cls=clear
 alias q=exit
@@ -12,7 +16,7 @@ alias dot="cd ~/.dotfiles/"
 alias ls="eza --color=always --icons"
 alias bat=batcat
 alias cat=batcat
-alias lg=lazygit
+alias lg="lazygit --use-config-file='$LAZY_CONFIG,$LAZYGIT_THEME'"
 alias glow=$HOME/Documents/glow/glow
 alias dn=dotnet
 alias csc="dotnet /home/matt/.local/programs/dotnet-sdk-9.0.102/sdk/9.0.102/Roslyn/bincore/csc.dll"
