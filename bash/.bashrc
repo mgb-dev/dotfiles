@@ -137,6 +137,8 @@ eval "`fnm env`"
 #> fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export FZF_CTRL_T_OPTS="--preview 'batcat -n --color=always --line-range :500 {}'"
+
 #> dotnet
 # bash parameter completion for the dotnet CLI
 
