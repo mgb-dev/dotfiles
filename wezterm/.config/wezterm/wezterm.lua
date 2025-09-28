@@ -26,5 +26,17 @@ config = {
 }
 
 --[[Actions]]
+
+-- ##Maximize on startup
+--[[
+Problem: I want my terminals to be maxized on starup, but Wezterm doesn't provide that option (09-2025)
+Solution: Implement my own
+--]]
+local Maximizer = require("maximizer")
+
+wezterm.on("update-status", function(window)
+	print("Update-status")
+	Maximizer.Run(wezterm, wezterm.mux:all_windows(), window, "mx_store")
+end)
 -- this line should be at the end
 return config
