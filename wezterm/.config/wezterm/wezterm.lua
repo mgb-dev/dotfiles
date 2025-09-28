@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 config = {
 	automatically_reload_config = true,
 	--Window
-	window_background_opacity = 0.93,
+	window_background_opacity = 0.96,
 	kde_window_background_blur = true,
 	window_decorations = "NONE",
 	window_padding = {
