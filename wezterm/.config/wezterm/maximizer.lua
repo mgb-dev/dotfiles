@@ -4,7 +4,7 @@ local Maximizer = {}
 ---Maximize window on startup
 ---@param wez table Wezterm Instance
 ---@param all_windows table `mux_windows` list
----@param window table current window for t (mostly when windows are closed)he event
+---@param window table current window for the event
 ---@param store_name string name for the `GLOBAL` persistent data store
 function Maximizer.Run(wez, all_windows, window, store_name)
 	-- grab the store instance, otherwise create it
