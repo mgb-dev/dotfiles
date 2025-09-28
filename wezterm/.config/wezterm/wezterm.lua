@@ -19,7 +19,7 @@ config = {
 	},
 	hide_tab_bar_if_only_one_tab = true,
 	--Font
-	font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" }),
+	font = wezterm.font("FiraCode Nerd Font", { weight = "Regular" }),
 	font_size = 12,
 	--Style
 	color_scheme = "carbonfox",
