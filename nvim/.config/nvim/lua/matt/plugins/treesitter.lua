@@ -8,6 +8,12 @@ return {
   },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
+    vim.filetype.add({
+      pattern = {
+        [".*/hypr/.*%.conf"] = "hyprlang",
+        ["*.asm"] = "nasm",
+      },
+    })
 
     treesitter.setup({
       highlight = { enable = true },
@@ -36,6 +42,7 @@ return {
         "dockerfile",
         "gitignore",
         "vimdoc",
+        "nasm",
       },
     })
   end,
