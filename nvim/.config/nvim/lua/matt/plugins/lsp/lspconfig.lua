@@ -61,10 +61,10 @@ return {
         map("n", "<leader>vl", vim.diagnostic.open_float, opts)
 
         opts.desc = "[V]iew [P]rev diagnostic"
-        map("n", "<leader>vp", vim.diagnostic.goto_prev, opts)
+        map("n", "<leader>vp", vim.diagnostic.get_next, opts)
 
         opts.desc = "[V]iew [N]ext diagnostic"
-        map("n", "<leader>vn", vim.diagnostic.goto_next, opts)
+        map("n", "<leader>vn", vim.diagnostic.get_next, opts)
 
         opts.desc = "[V]iew [R]eferences"
         map("n", "<leader>vrr", vim.lsp.buf.references, opts)
@@ -80,67 +80,14 @@ return {
       end,
     })
 
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-      ["lua_ls"] = function()
-        lspconfig["lua_ls"].setup({
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              diagnostics = {
-                globals = { "vim" },
-              },
-              completion = {
-                callSnippet = "Replace",
-              },
-            },
-          },
-        })
-      end,
-      ["gopls"] = function()
-        lspconfig["gopls"].setup({
-          capabilities = capabilities,
-          cmd = { "gopls" },
-          filetypes = { "go", "gomod", "gowork", "gotmpl" },
-          root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-          settings = {
-            gopls = {
-              completeUnimported = true,
-              usePlaceholders = true,
-              analyses = {
-                unusedparams = true,
-              },
-            },
-          },
-        })
-      end,
-      ["omnisharp"] = function()
-        -- local omnisharp_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp"
-        local omnisharp_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"
-        -- local pid = vim.fn.getpid()
-        lspconfig["omnisharp"].setup({
-          -- cmd = { omnisharp_path, "--languageserver", "--hostPID", tostring(pid) },
-          cmd = { "dotnet", omnisharp_path },
-          capabilities = capabilities,
-          enable_roslyn_analysers = true,
-          enable_import_completion = true,
-          organize_imports_on_format = true,
-          enable_decompilation_support = true,
-          filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
-        })
-      end,
+    mason_lspconfig.setup({
+      automatic_enable = true,
     })
   end,
 }
